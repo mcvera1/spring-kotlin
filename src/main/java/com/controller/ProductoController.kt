@@ -9,13 +9,18 @@ class ProductoController(private val productoService: ProductoService) {
     @GetMapping("/productos")
     fun obtenerProductos(): List<Producto> =  productoService.obtenerProductos()
 
-    @PostMapping("/productos")
+    @PostMapping("/producto")
     fun crearProducto(@RequestBody producto: Producto) {
         productoService.crearProducto(producto);
     }
 
-    @DeleteMapping("/productos/{id}")
+    @DeleteMapping("/producto/{id}")
     fun borrarProducto( @PathVariable("id") id: String) {
         productoService.borrarProducto(id);
+    }
+
+    @PostMapping("/producto/{id}")
+    fun borrarProducto( @PathVariable("id") id: String, @RequestBody producto: Producto) {
+        productoService.actualizarProduct(id, producto);
     }
 }

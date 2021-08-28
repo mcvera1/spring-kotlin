@@ -17,4 +17,7 @@ class ProductoServiceImpl(private val productoGateway: ProductoGateway) : Produc
         productoGateway.borrarProducto(idProducto);
     }
 
+    override fun actualizarProduct(productId:String, producto: Producto) {
+        productoGateway.actualizarProduct(productId, producto);
+    }
 }
