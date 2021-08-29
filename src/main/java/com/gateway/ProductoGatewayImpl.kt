@@ -12,7 +12,8 @@ class ProductoGatewayImpl(private val productoRepositorio: ProductoRepositorio) 
             val productos = Producto(UUID.randomUUID().toString(), producto.nombre, producto.sku, producto.descripcion, producto.precio/2, true);
             productoRepositorio.save(productos);
         } else {
-            productoRepositorio.save(producto);
+            val productos = Producto(UUID.randomUUID().toString(), producto.nombre, producto.sku, producto.descripcion, producto.precio, true);
+            productoRepositorio.save(productos);
         }
 
 

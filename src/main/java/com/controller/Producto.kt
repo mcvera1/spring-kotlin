@@ -9,7 +9,7 @@ import javax.persistence.Table
 @Table(name = "producto")
 data class Producto(
         @Id
-        var id: String = UUID.randomUUID().toString(),
+        var id: String,
         var nombre: String,
         var sku: String,
         var descripcion: String,
